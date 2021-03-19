@@ -6,11 +6,16 @@ colors:
 default_hour: 9
 default_minute: 0
 editor: vim
-encrypt: true
+encrypt: false
 highlight: true
 indent_character: '|'
 journals:
   default: /lhome/dkadiog/Documents/notes/Aktuelles.txt
+  paacs: 
+    journal: /lhome/dkadiog/Documents/notes/paacs/aktuell.txt
+    encrypt: false
+    template: /lhome/dkadiog/Documents/notes/.notes/paacs.txt
+  #default: /lhome/dkadiog/.notes/journal.txt
   wv: 
     journal: /lhome/dkadiog/Documents/notes/WebVis/aktuell.txt
     encrypt: false

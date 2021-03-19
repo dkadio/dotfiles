@@ -10,4 +10,6 @@ if _has kubectl; then
   # 
   alias kga='kubectl get all --all-namespaces -o wide'
   alias kg='kubectl get all -o wide'
+  alias kc='kubectl ctx'
+  alias kn='kubectl ns'
 fi
