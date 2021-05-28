@@ -251,6 +251,12 @@ chsh -s $(which bash) # optionally change shell back to bash
   vscjava.vscode-maven-0.21.4
   vscodevim.vim-1.14.5
 
+- Change Clone (submoudles=
+- Update Readme
+- Add GH cli 
+- Add FZF k8s
+- default install rg
+
 [solarized]: <http://ethanschoonover.com/solarized>
 [homebrew]: <http://brew.sh/>
 [oh-my-zsh]: <https://github.com/robbyrussell/oh-my-zsh>
@@ -266,3 +272,5 @@ chsh -s $(which bash) # optionally change shell back to bash
 [itermcolors]: <https://raw.githubusercontent.com/altercation/solarized/e40cd4130e2a82f9b03ada1ca378b7701b1a9110/iterm2-colors-solarized/Solarized%20Dark.itermcolors>
 [powerlevel10k]: <https://github.com/romkatv/powerlevel10k>
 [vim-plug]: <https://github.com/junegunn/vim-plug>
+
+
