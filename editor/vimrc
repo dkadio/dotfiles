@@ -339,6 +339,15 @@ nnoremap <S-k> :tabn<CR>
 nnoremap <S-j> :tabp<CR>
 nnoremap <C-x> :q!<CR>
 
+" YCM GoTo
+nnoremap <C-j> :YcmCompleter GoToDeclaration<CR>
+nnoremap <C-i> :YcmCompleter GoToImplementaion<CR>
+nnoremap <C-k> :YcmCompleter GoToType<CR>
+nnoremap <C-l> :YcmCompleter GoToDocumentOutline<CR>
+
+nmap <leader>fs <Plug>(YCMFindSymbolInWorkspace)
+nmap <leader>qf :YcmCompleter FixIt<CR>
+
 " Vim java imports
 let g:JavaImpPaths = $HOME . "/source," . "/.m2"
 let g:JavaImpDataDir = $HOME . "/vim/javaImp"
