@@ -69,5 +69,18 @@
       "before": ["<C-k>"],
       "commands": ["editor.action.goToReferences"]
     }
-  ]
+  ],
+  "prettier.singleQuote": true,
+  "tabnine.experimentalAutoImports": true,
+  "jenkins.pipeline.linter.connector.crumbUrl": "https://dp-jenkins.dot-c.daimler.com/crumbIssuer/api/xml?xpath=concat(//crumbRequestField,%22:%22,//crumb))",
+  "jenkins.pipeline.linter.connector.url": "https://dp-jenkins.dot-c.app.corpintra.net/pipeline-model-converter/validate",
+  "jenkins.pipeline.linter.connector.token": "116255a3dad3403b74f510faef0a7e2acb",
+  "jenkins.pipeline.linter.connector.strictssl": false,
+  "prettier.printWidth": 160,
+  "redhat.telemetry.enabled": false,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "vs-kubernetes": {
+    "vscode-kubernetes.minikube-path.linux": "/lhome/dkadiog/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+  },
+  "git.autofetch": true
 }

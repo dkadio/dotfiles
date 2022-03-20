@@ -32,6 +32,11 @@ journals:
     journal: /lhome/dkadiog/Documents/notes/DEVE/aktuell.txt
     encrypt: false
     template: /lhome/dkadiog/Documents/notes/.notes/deve.txt
+  learn: 
+    journal: /lhome/dkadiog/Documents/notes/learn/aktuell.txt
+    encrypt: false
+    template: /lhome/dkadiog/Documents/notes/.notes/template.txt
+
 linewrap: 79
 tagsymbols: '@'
 template: /lhome/dkadiog/Documents/notes/.notes/template.txt

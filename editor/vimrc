@@ -48,6 +48,7 @@ call plug#begin()
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'cmhamill/vim-jrnl'
+Plug 'lifepillar/vim-solarized8'
 
 Plug 'rustushki/JavaImp.vim'
 
@@ -66,7 +67,7 @@ Plug 'bazelbuild/vim-bazel'
 
 Plug 'stephpy/vim-yaml'
 
-Plug 'altercation/vim-colors-solarized'
+"Plug 'altercation/vim-colors-solarized'
 Plug 'ryanoasis/vim-devicons'
 
 Plug 'tpope/vim-fugitive', { 'tag': 'v3.0' }
@@ -99,7 +100,7 @@ if (&t_Co > 2 || has("gui_running"))
   syntax enable
   set background=dark
   " solarized won't exist if we didn't run :PlugInstall
-  silent! colorscheme solarized
+  silent! colorscheme solarized8
 endif
 
 " Only do this part when compiled with support for autocommands.
@@ -341,4 +342,19 @@ nnoremap <C-x> :q!<CR>
 " Vim java imports
 let g:JavaImpPaths = $HOME . "/source," . "/.m2"
 let g:JavaImpDataDir = $HOME . "/vim/javaImp"
+let g:go_doc_keywordprg_enabled = 0
 
+" YCM Completer Jumps
+nnoremap <leader>gt :YcmCompleter GoTo<CR>
+nnoremap <leader>fi :YcmCompleter FixIt<CR>
+nnoremap <leader>gd :YcmCompleter GetDoc<CR>
+nnoremap <leader>gtp :YcmCompleter GetType<CR>
+nnoremap <leader>gp :YcmCompleter GetParent<CR>
+nnoremap <leader>gti :YcmCompleter GoToInclude<CR>
+nnoremap <leader>gdf :YcmCompleter GoToDefinition<CR>
+nnoremap <leader>gdc :YcmCompleter GoToDeclaration<CR>
+nnoremap <leader>yd :YcmDiags<CR>
+
+
+
+:imap jj <Esc>

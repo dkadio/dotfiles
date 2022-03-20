@@ -1,9 +1,9 @@
-# Andrew's Dotfiles
+# Deniz's Dotfiles
 
 These are my personal dotfiles.
 
 ```
-curl https://andrew.cloud/dotfiles.sh | bash
+curl https://next.can-designsh | bash
 ```
 
 ![Screenshot of my dotfiles](.images/screenshot.png)

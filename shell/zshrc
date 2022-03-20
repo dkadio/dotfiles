@@ -4,6 +4,8 @@ ZSH=$HOME/.oh-my-zsh
 POWERLEVEL9K_MODE='nerdfont-complete'
 ZSH_THEME='powerlevel10k/powerlevel10k'
 
+
+
 plugins=(
   z
   git
@@ -56,7 +58,7 @@ DISABLE_UPDATE_PROMPT=true
 
 # for Homebrew installed rbenv
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
+bindkey -s jj '\e'
 bindkey -v # vi mode for shell
 bindkey -e # enable C-x-e for shell editor
 # key bindings for history search
@@ -72,7 +74,7 @@ alias tmux="TERM=screen-256color-bce tmux"
 alias t="tmux a -d 2> /dev/null || tmux"
 
 # Use Python 3! https://pythonclock.org
-alias python="python3.7"
+alias python="python3.8"
 alias pip="pip3"
 
 # Use Neovim instead of classic vim (if available)
@@ -219,18 +221,48 @@ if [ -f ~/.dir_colors/dircolors ]
 fi
 alias sc='bash ~/sshlist'
 alias tf='terraform'
+alias gt='gotask'
 
 export NVM_DIR="$HOME/.nvm"
 export PATH=$PATH:/usr/local/go/bin
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm use default 16.14.0
 
 # No Hisotry logging for Jrnl
 setopt HIST_IGNORE_SPACE
 alias jrnl=" jrnl"
 alias kctr='kubectl -n rook-ceph exec -it $(kubectl -n rook-ceph get pod -l "app=rook-ceph-tools" -o jsonpath="{.items[0].metadata.name}") bash'
 alias kf='kubectl fuzzy'
+alias kn='kubectl ns'
+alias kfd='kubectl fuzzy --all-namespaces describe'
+alias kfl='kubectl fuzzy --all-namespaces logs'
+alias kfe='kubectl fuzzy --all-namespaces exec'
+alias kfc='kubectl fuzzy --all-namespaces create'
+alias kfde='kubectl fuzzy --all-namespaces delete'
+
+
+
+
+#source ~/.kubectl_fzf.plugin.zsh
+
 #gh cli
 eval "$(gh completion -s zsh)"
-source ~/.kubectl_fzf.plugin.zsh
 source ~/.dotfiles/shell/k8skeybindings
+source ~/.dotfiles/third_party/git-flow.plugin.zsh
+source <(dapr completion zsh)
+source ~/.dotfiles/third_party/az.completion
+
+# Add JBang to environment
+#alias j!=jbang
+#export PATH=$HOME/.jbang/bin:$PATH
+
+#source <(kubectl completion zsh)
+#alias k=kubectl
+#compdef __start_kubectl k
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+#source <(quarkus completion)
+export PATH=$PATH:"/opt/vendor/bin"
