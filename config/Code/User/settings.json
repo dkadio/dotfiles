@@ -82,5 +82,9 @@
   "vs-kubernetes": {
     "vscode-kubernetes.minikube-path.linux": "/lhome/dkadiog/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
   },
-  "git.autofetch": true
+  "git.autofetch": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "[csharp]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp"
+  }
 }

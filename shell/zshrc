@@ -7,6 +7,7 @@ ZSH_THEME='powerlevel10k/powerlevel10k'
 
 
 plugins=(
+  zsh-syntax-highlighting
   z
   git
   bundler
@@ -18,6 +19,7 @@ plugins=(
   docker
   docker-compose
   taskwarrior
+  task
   systemd
   terraform
   helm
@@ -28,6 +30,7 @@ plugins=(
   aws
   kops
   kubectl
+  zsh-autosuggestions
 )
 
 # Returns whether the given command is executable or aliased.
@@ -145,7 +148,10 @@ fi
 # Configure fzf (if available).
 if _has fzf; then
   # Source fzf key bindings and auto-completion.
-  if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
+  if [ -e ~/.fzf.zsh ]; then
+    # Source fzf scripts via Homebrew.
+    source ~/.fzf.zsh
+  elif [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
     # Source fzf scripts via Homebrew.
     source /usr/local/opt/fzf/shell/key-bindings.zsh
     source /usr/local/opt/fzf/shell/completion.zsh
@@ -212,8 +218,8 @@ function chpwd() {
     ls -l
 }
 
-source ~/.dotfiles/shell/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.dotfiles/shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+#source ~/.dotfiles/shell/zsh-autosuggestions/zsh-autosuggestions.zsh
+#source ~/.dotfiles/shell/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=#fff
 if [ -f ~/.dir_colors/dircolors ]
@@ -221,13 +227,13 @@ if [ -f ~/.dir_colors/dircolors ]
 fi
 alias sc='bash ~/sshlist'
 alias tf='terraform'
-alias gt='gotask'
+alias gt='task'
 
 export NVM_DIR="$HOME/.nvm"
-export PATH=$PATH:/usr/local/go/bin
+#export PATH=$PATH:/usr/local/go/bin
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use default 16.14.0
+#nvm use default 16.17.0
 
 # No Hisotry logging for Jrnl
 setopt HIST_IGNORE_SPACE
@@ -246,8 +252,10 @@ alias kfde='kubectl fuzzy --all-namespaces delete'
 
 #source ~/.kubectl_fzf.plugin.zsh
 
-#gh cli
-eval "$(gh completion -s zsh)"
+# github cli
+autoload -U compinit
+compinit -i
+
 source ~/.dotfiles/shell/k8skeybindings
 source ~/.dotfiles/third_party/git-flow.plugin.zsh
 source <(dapr completion zsh)
@@ -266,3 +274,6 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 #source <(quarkus completion)
 export PATH=$PATH:"/opt/vendor/bin"
+source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+
+[[ -s "/Users/dkadiog/.gvm/scripts/gvm" ]] && source "/Users/dkadiog/.gvm/scripts/gvm"

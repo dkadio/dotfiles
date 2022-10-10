@@ -76,6 +76,9 @@ Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'easymotion/vim-easymotion'
 Plug 'prettier/vim-prettier', { 'do': 'npm install' }
 Plug 'Valloric/YouCompleteMe'
+Plug 'prettier/vim-prettier'
+Plug 'sbdchd/neoformat'
+
 call plug#end()
 
 " Map ctrl-n to toggle NERDTree.
@@ -203,9 +206,10 @@ if executable('node')
         \ pumvisible() ? "\<C-n>" :
         \ <SID>check_back_space() ? "\<TAB>" :
         \ coc#refresh()
-  inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+  inoremap <expr> <Tab> coc#pum#visible() ? coc#pum#next(1) : "\<Tab>"
+  inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 
-  function! s:check_back_space() abort
+   function! s:check_back_space() abort
     let col = col('.') - 1
     return !col || getline('.')[col - 1]  =~# '\s'
   endfunction
@@ -215,7 +219,7 @@ if executable('node')
 
   " Use <cr> to confirm completion, `<C-g>u` means break undo chain at current position.
   " Coc only does snippet and additional edit on confirm.
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  "" inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
   " Or use `complete_info` if your vim support it, like:
   " inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
 
@@ -364,6 +368,15 @@ nnoremap <leader>gdf :YcmCompleter GoToDefinition<CR>
 nnoremap <leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>yd :YcmDiags<CR>
 
+" tab throug suggestions
+"inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+"inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
+
+let g:neoformat_try_node_exe = 1
+autocmd BufWritePre *.js Neoformat
+autocmd BufWritePre *.jsx Neoformat
+autocmd BufWritePre *.tsx Neoformat
+autocmd BufWritePre *.ts Neoformat
 
 :imap jj <Esc>

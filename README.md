@@ -50,42 +50,22 @@ This font aggregator is nice in the sense that it collects many different glyphs
 from various sources.
 (We'll be using a lot of different symbols!)
 
-You'll first want to install a pre-patched font.
-There are multiple ways to do this.
-If you prefer to use the browser, download `Droid Sans Mono Nerd Font
-Complete.otf` from the Nerd Fonts [prepatched fonts folder][prepatched].
-Clicking on the file from Finder after downloading it should be sufficient.
-
-Alternatively, if you have Homebrew, you can install it from the command line.
+Follow the [Powerlevel10k font instructions][p10k-fonts] to install the proper
+fonts.
 
 ```shell
-brew tap homebrew/cask-fonts
-brew cask install font-droidsansmono-nerd-font
+p10k configure
 ```
 
-Next, you'll want to configure iTerm to use the new font.
-
-1. Go to the `Text` tab in your current iTerm profile and select the option to
-   `Use a different font for non-ASCII text`.
-2. In the same tab, select `Droid Sans Mono Nerd Font` as the font for non-ASCII
-   text.
-
-The Powerline symbols included in the font might not align well.
-As a remedy, iTerm has a `Use built-in Powerline glyphs` option to substitute
-the characters with its own built-in alternative characters.
-I'd recommend checking that option.
-
 The Text section of my iTerm settings looks like the picture below.
-For ASCII text, I use `Menlo Regular` (which is a native font) and use `14pt`
-for all font types.
 
-![Text section of iTerm settings](.images/iterm_options.png)
+![Text section of iTerm settings](images/iterm_options.png)
 
 #### Solarized on iTerm
 
 The Solarized colors for iTerm can be found in its
 [official repository][solarized-repo].
-Import [`Solarized Dark.itermcolors`][itermcolors] as a colorscheme for iTerm.
+(You won't need to download it.)
 In the `Colors` section of your iTerm profile, use the `Solarized Dark` preset.
 
 #### Enable Copy/Paste in Tmux
@@ -106,6 +86,15 @@ If using iTerm, setting `Scroll wheel sends arrow keys when in alternate screen
 mode.` to `Yes` will allow trackpad scrolling while in Vim.
 The setting can be found in the advanced preferences.
 
+#### Enabling the Meta Key on iTerm
+
+If using iTerm, you may want to set the option key mode to `Esc+` to make it be
+a meta key.
+It's used for a few shortcuts, such as resizing tmux panes.
+
+#### Bold Text Color
+
+Uncheck the `Brighten Bold Text` option in iTerm if all bold text is gray.
 ### Linux
 
 #### Downloading Fonts for Linux
@@ -210,6 +199,14 @@ When first opening Vim, run the following command.
 :PlugInstall
 ```
 
+### tmux 
+
+install plugins 
+
+```
+c-a I
+```
+
 ## Customizing
 
 You can customize zsh, vim, tmux, and git for each specific machine.
@@ -235,33 +232,35 @@ chsh -s $(which bash) # optionally change shell back to bash
 ```
 ## TODOs:
 
--youcomplete me install
--vs code extensions install or link:
-  dbaeumer.vscode-eslint-2.1.5
-  dsznajder.es7-react-js-snippets-2.7.1
-  esbenp.prettier-vscode-4.7.0
-  extensions
-  ipedrazas.kubernetes-snippets-0.1.9
-  ms-azuretools.vscode-docker-1.2.1
-  ms-kubernetes-tools.vscode-kubernetes-tools-1.2.0
-  ms-vscode.go-0.14.3
-  msjsdiag.debugger-for-chrome-4.12.8
-  msjsdiag.vscode-react-native-0.16.0
-  redhat.java-0.62.0
-  redhat.vscode-yaml-0.8.0
-  visualstudioexptteam.vscodeintellicode-1.2.7
-  vscjava.vscode-java-debug-0.26.0
-  vscjava.vscode-java-dependency-0.10.1
-  vscjava.vscode-java-pack-0.9.1
-  vscjava.vscode-java-test-0.22.4
-  vscjava.vscode-maven-0.21.4
-  vscodevim.vim-1.14.5
+- youcomplete me install
+- vs code extensions install or link:
+- brew formla:
+  fpp
+  fzf
+  gh
+  git-delta
+  git-secret
+  gnupg
+  go
+  go-task
+  helm
+  helm-docs
+  jq
+  jrnl
+  k9s
+  kubernetes-cli
+  kubeseal
+  kustomize
+  ripgrep
+  task
+  tmux
+  tree
+  vim
+  wget
+  yq
 
-- Change Clone (submoudles=
+- Change Clone (submoudles)
 - Update Readme
-- Add GH cli 
-- Add FZF k8s
-- default install rg
 
 [solarized]: <http://ethanschoonover.com/solarized>
 [homebrew]: <http://brew.sh/>
@@ -278,5 +277,3 @@ chsh -s $(which bash) # optionally change shell back to bash
 [itermcolors]: <https://raw.githubusercontent.com/altercation/solarized/e40cd4130e2a82f9b03ada1ca378b7701b1a9110/iterm2-colors-solarized/Solarized%20Dark.itermcolors>
 [powerlevel10k]: <https://github.com/romkatv/powerlevel10k>
 [vim-plug]: <https://github.com/junegunn/vim-plug>
-
-

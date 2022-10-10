@@ -9,8 +9,8 @@ editor: vim
 encrypt: false
 highlight: true
 indent_character: '|'
-journals:
-  default: /lhome/dkadiog/Documents/notes/Aktuelles.txt
+journals:  
+  default: ~/Documents/notes/Aktuelles.txt
   paacs: 
     journal: /lhome/dkadiog/Documents/notes/paacs/aktuell.txt
     encrypt: false
@@ -39,6 +39,6 @@ journals:
 
 linewrap: 79
 tagsymbols: '@'
-template: /lhome/dkadiog/Documents/notes/.notes/template.txt
+template: ~/Documents/notes/.notes/template.txt
 timeformat: '%Y-%m-%d %H:%M'
 version: v2.4.5
