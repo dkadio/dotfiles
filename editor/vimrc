@@ -49,6 +49,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --bin' }
 Plug 'junegunn/fzf.vim'
 Plug 'cmhamill/vim-jrnl'
 Plug 'lifepillar/vim-solarized8'
+Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
 
 Plug 'rustushki/JavaImp.vim'
 
@@ -74,10 +75,14 @@ Plug 'tpope/vim-fugitive', { 'tag': 'v3.0' }
 Plug 'airblade/vim-gitgutter'
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'easymotion/vim-easymotion'
-Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+"Plug 'prettier/vim-prettier', { 'do': 'npm install' }
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'Valloric/YouCompleteMe'
-Plug 'prettier/vim-prettier'
 Plug 'sbdchd/neoformat'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'aklt/plantuml-syntax'
+Plug 'tyru/open-browser.vim'
+Plug 'weirongxu/plantuml-previewer.vim'
 
 call plug#end()
 
@@ -373,10 +378,12 @@ nnoremap <leader>yd :YcmDiags<CR>
 "inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 
-let g:neoformat_try_node_exe = 1
-autocmd BufWritePre *.js Neoformat
-autocmd BufWritePre *.jsx Neoformat
-autocmd BufWritePre *.tsx Neoformat
-autocmd BufWritePre *.ts Neoformat
+ "let g:neoformat_try_node_exe = 1
+ "autocmd BufWritePre *.js Neoformat
+ "autocmd BufWritePre *.jsx Neoformat
+ "autocmd BufWritePre *.tsx Neoformat
+ "autocmd BufWritePre *.ts Neoformat
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
 
 :imap jj <Esc>

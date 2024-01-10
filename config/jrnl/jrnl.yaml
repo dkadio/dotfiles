@@ -9,36 +9,34 @@ editor: vim
 encrypt: false
 highlight: true
 indent_character: '|'
-journals:  
+journals:
   default: ~/Documents/notes/Aktuelles.txt
-  paacs: 
-    journal: /lhome/dkadiog/Documents/notes/paacs/aktuell.txt
+  deve:
     encrypt: false
-    template: /lhome/dkadiog/Documents/notes/.notes/paacs.txt
-  #default: /lhome/dkadiog/.notes/journal.txt
-  wv: 
-    journal: /lhome/dkadiog/Documents/notes/WebVis/aktuell.txt
-    encrypt: false
-    template: /lhome/dkadiog/Documents/notes/.notes/wv.txt
-  tdp: 
-    journal: /lhome/dkadiog/Documents/notes/TDP/aktuell.txt
-    encrypt: false
-    template: /lhome/dkadiog/Documents/notes/.notes/tdp.txt
-  kar: 
-    journal: /lhome/dkadiog/Documents/notes/KAR/atkuell.txt
-    encrypt: false
-    template: /lhome/dkadiog/Documents/notes/.notes/kar.txt
-  deve: 
     journal: /lhome/dkadiog/Documents/notes/DEVE/aktuell.txt
-    encrypt: false
     template: /lhome/dkadiog/Documents/notes/.notes/deve.txt
-  learn: 
-    journal: /lhome/dkadiog/Documents/notes/learn/aktuell.txt
+  kar:
     encrypt: false
+    journal: /lhome/dkadiog/Documents/notes/KAR/atkuell.txt
+    template: /lhome/dkadiog/Documents/notes/.notes/kar.txt
+  learn:
+    encrypt: false
+    journal: /lhome/dkadiog/Documents/notes/learn/aktuell.txt
     template: /lhome/dkadiog/Documents/notes/.notes/template.txt
-
+  paacs:
+    encrypt: false
+    journal: /lhome/dkadiog/Documents/notes/paacs/aktuell.txt
+    template: /lhome/dkadiog/Documents/notes/.notes/paacs.txt
+  tdp:
+    encrypt: false
+    journal: /lhome/dkadiog/Documents/notes/TDP/aktuell.txt
+    template: /lhome/dkadiog/Documents/notes/.notes/tdp.txt
+  wv:
+    encrypt: false
+    journal: /lhome/dkadiog/Documents/notes/WebVis/aktuell.txt
+    template: /lhome/dkadiog/Documents/notes/.notes/wv.txt
 linewrap: 79
 tagsymbols: '@'
 template: ~/Documents/notes/.notes/template.txt
 timeformat: '%Y-%m-%d %H:%M'
-version: v2.4.5
+version: v4.1

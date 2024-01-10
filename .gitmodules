@@ -6,4 +6,7 @@
 	url = https://github.com/junegunn/fzf.git
 [submodule "shell/zsh-autosuggestions"]
 	path = shell/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+  url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "shell/fzf-tab"]
+	path = shell/fzf-tab
+	url = https://github.com/Aloxaf/fzf-tab

@@ -80,11 +80,25 @@
   "redhat.telemetry.enabled": false,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "vs-kubernetes": {
-    "vscode-kubernetes.minikube-path.linux": "/lhome/dkadiog/.vs-kubernetes/tools/minikube/linux-amd64/minikube"
+    "vscode-kubernetes.minikube-path.linux": "/lhome/dkadiog/.vs-kubernetes/tools/minikube/linux-amd64/minikube",
+    "vscode-kubernetes.helm-path.mac": "/Users/dkadiog/.vs-kubernetes/tools/helm/darwin-arm64/helm",
+    "vscode-kubernetes.minikube-path.mac": "/Users/dkadiog/.vs-kubernetes/tools/minikube/darwin-arm64/minikube",
+    "vs-kubernetes.minikube-show-information-expiration": "2023-12-27T15:18:20.398Z"
   },
   "git.autofetch": true,
   "security.workspace.trust.untrustedFiles": "open",
   "[csharp]": {
     "editor.defaultFormatter": "ms-dotnettools.csharp"
-  }
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "bridgeToKubernetes.disconnectAfterDebugging": false,
+  "vscode-kubernetes.helm-path": "/opt/homebrew/bin/helm",
+  "vscode-kubernetes.helm-path.mac": "/opt/homebrew/bin/helm",
+  "vscode-kubernetes.helm-path.linux": "undefined/opt/homebrew/bin/helm",
+  "vscode-kubernetes.helm-path.windows": "/opt/homebrew/bin/helm",
+  "vscode-kubernetes.kubectl-path": "/opt/homebrew/bin/kubectl",
+  "vscode-kubernetes.kubectl-path.linux": "/opt/homebrew/bin/kubectl",
+  "vscode-kubernetes.kubectl-path.mac": "/opt/homebrew/bin/kubectl",
+  "vscode-kubernetes.kubectl-path.windows": "/opt/homebrew/bin/kubectl",
+  "editor.inlineSuggest.enabled": true
 }
