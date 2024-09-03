@@ -50,6 +50,11 @@ Plug 'junegunn/fzf.vim'
 Plug 'cmhamill/vim-jrnl'
 Plug 'lifepillar/vim-solarized8'
 Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install' }
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install --frozen-lockfile --production',
+  \ 'branch': 'release/0.x',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'svelte', 'html']
+  \ }
 
 Plug 'rustushki/JavaImp.vim'
 
@@ -374,8 +379,8 @@ nnoremap <leader>gdc :YcmCompleter GoToDeclaration<CR>
 nnoremap <leader>yd :YcmDiags<CR>
 
 " tab throug suggestions
-"inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
-"inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
+" inoremap <expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" inoremap <expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<TAB>"
 
 
  "let g:neoformat_try_node_exe = 1

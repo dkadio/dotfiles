@@ -21,7 +21,6 @@ plugins=(
   docker
   docker-compose
   taskwarrior
-  task
   systemd
   terraform
   helm
@@ -33,7 +32,6 @@ plugins=(
   kops
   kubectl
   zsh-autosuggestions
-  vault
   yum
 )
 
@@ -80,9 +78,6 @@ alias tmux="TERM=screen-256color-bce tmux"
 # Attempt to take over existing sessions before creating a new tmux session.
 alias t="tmux a -d 2> /dev/null || tmux"
 
-# Use Python 3! https://pythonclock.org
-alias python="python3.9"
-alias pip="pip3"
 
 # Use Neovim instead of classic vim (if available)
 if _has nvim; then
@@ -240,7 +235,7 @@ export NVM_DIR="$HOME/.nvm"
 #export PATH=$PATH:/usr/local/go/bin
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use default 16.16.0
+nvm use default 20.9.0
 
 # No Hisotry logging for Jrnl
 setopt HIST_IGNORE_SPACE
@@ -291,7 +286,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 #source <(quarkus completion)
 export PATH=$PATH:"/opt/vendor/bin"
-source /opt/homebrew/opt/powerlevel10k/powerlevel10k.zsh-theme
+source $(brew --prefix)/share/powerlevel10k/powerlevel10k.zsh-theme
 
 [[ -s "/Users/dkadiog/.gvm/scripts/gvm" ]] && source "/Users/dkadiog/.gvm/scripts/gvm"
 export HISTSIZE=10000000
@@ -305,3 +300,9 @@ export PATH="$WASMTIME_HOME/bin:$PATH"
 
 # krew path
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
+source /Users/dkadiog/.config/mbos/mbos_do_completion_zsh.sh
