@@ -53,7 +53,7 @@ declare -a FILES_TO_SYMLINK=(
   'shell/tmux.conf'
   'shell/zshrc'
   'shell/fzf-tab'
-
+  
   'third_party/Gdbinit/gdbinit'
   'third_party/zsh-interactive-cd/zsh-interactive-cd.plugin.zsh'
 )
@@ -61,7 +61,6 @@ declare -a FILES_TO_SYMLINK=(
 declare -a FULL_PATH_FILES_TO_SYMLINK=(
   'config/nvim/init.vim'
   'config/jrnl/jrnl.yaml'
-
   'config/Code/User/settings.json'
   'config/Code/User/keybindings.json'
 )
@@ -116,6 +115,10 @@ answer_is_yes() {
   [[ "$REPLY" =~ ^[Yy]$ ]] \
     && return 0 \
     || return 1
+}
+
+install_brewpackages() {
+  brew bundle --file=~~/.dotfiles/Brewfile
 }
 
 install_zsh() {
@@ -234,6 +237,13 @@ if [[ $BUILD ]]; then
       install_kubectl 
       install_helm
       install_kops
+    fi
+  fi
+
+  if [ -f /opt/homebrew/bin/brew ]; then
+    ask_for_confirmation "install brew package list?"
+    if answer_is_yes; then
+      install_brewpackages
     fi
   fi
 
