@@ -8,6 +8,7 @@ ZSH_THEME='powerlevel10k/powerlevel10k'
 
 
 plugins=(
+  gradle
   fzf-tab
   zsh-syntax-highlighting
   z
@@ -229,7 +230,6 @@ if [ -f ~/.dir_colors/dircolors ]
 fi
 alias sc='bash ~/sshlist'
 alias tf='terraform'
-alias gt='task'
 
 export NVM_DIR="$HOME/.nvm"
 #export PATH=$PATH:/usr/local/go/bin

@@ -392,3 +392,4 @@ let g:prettier#autoformat = 1
 let g:prettier#autoformat_require_pragma = 0
 
 :imap jj <Esc>
+source /Users/dkadiog/source/lsp-examples/vimrc.generated
